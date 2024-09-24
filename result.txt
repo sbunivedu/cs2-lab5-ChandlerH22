@@ -1,0 +1,75 @@
+[s857370@cisone cs2-lab5-ChandlerH22]$ java LinkedQueueTester
+expect:abcd
+   got:abcd
+expect:a
+   got:a
+expect:empty string
+   got:
+expect:EmptyCollectionException to be thrown
+EmptyCollectionException is caught
+
+[s857370@cisone cs2-lab5-ChandlerH22]$ java TicketCounter
+customers:100
+Number of cashiers: 1
+Average time: 5317
+
+customers:100
+Number of cashiers: 2
+Average time: 2325
+
+customers:100
+Number of cashiers: 3
+Average time: 1332
+
+customers:100
+Number of cashiers: 4
+Average time: 840
+
+customers:100
+Number of cashiers: 5
+Average time: 547
+
+customers:100
+Number of cashiers: 6
+Average time: 355
+
+customers:100
+Number of cashiers: 7
+Average time: 219
+
+customers:100
+Number of cashiers: 8
+Average time: 120
+
+customers:100
+Number of cashiers: 9
+Average time: 120
+
+customers:100
+Number of cashiers: 10
+Average time: 120
+
+customers:100
+Number of cashiers: 11
+Average time: 120
+
+customers:100
+Number of cashiers: 12
+Average time: 120
+
+customers:100
+Number of cashiers: 13
+Average time: 120
+
+customers:100
+Number of cashiers: 14
+Average time: 120
+
+customers:100
+Number of cashiers: 15
+Average time: 120
+
+I learned that the point at which customers arrive is always 15 seconds after the last one. Because of that combined with the fact that it takes 120
+seconds for a customer to be processed, there will never be more than 8 customers at any given time(8*15=120). Therefore, you will never need more than
+8 cashiers. Adding any more will do nothing, as proven by the test results. The lowest it will be is 120 seconds, because that is the process time. 
+Definitely an interesting assignment.

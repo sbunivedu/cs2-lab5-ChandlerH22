@@ -22,7 +22,14 @@ public class LinkedQueue<T> implements QueueADT<T>{
    * @param element the element to be added to the tail of the queue
    */
   public void enqueue(T element){
-    return;
+    LinearNode<T> node = new LinearNode<T>(element);
+    if (isEmpty()){
+      head = node;
+    }else{
+      tail.setNext(node);
+    }
+    tail = node;
+    count++;
   }
 
   /**
@@ -32,7 +39,16 @@ public class LinkedQueue<T> implements QueueADT<T>{
    * @throws EmptyCollectionException if the queue is empty
    */
   public T dequeue() throws EmptyCollectionException{
-    return null;
+    if (isEmpty()){
+      throw new EmptyCollectionException("Queue is empty");
+    }
+    T result = head.getElement();
+    head = head.getNext();
+    count--;
+    if (isEmpty()){
+      tail = null;
+    }
+    return result;
   }
 
   /**
@@ -43,7 +59,10 @@ public class LinkedQueue<T> implements QueueADT<T>{
    */
   public T first() throws EmptyCollectionException{
    // To be completed as a Programming Project
-    return null;
+    if (isEmpty()){
+      throw new EmptyCollectionException("Queue is empty");
+    }
+    return head.getElement();
   }
 
   /**
@@ -52,7 +71,7 @@ public class LinkedQueue<T> implements QueueADT<T>{
   */
   public boolean isEmpty(){
     // To be completed as a Programming Project
-    return false;
+    return count == 0;
   }
 
   /**
@@ -61,7 +80,7 @@ public class LinkedQueue<T> implements QueueADT<T>{
    */
   public int size(){
     // To be completed as a Programming Project
-    return 0;
+    return count;
   }
 
   /**
